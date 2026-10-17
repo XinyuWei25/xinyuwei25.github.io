@@ -1,63 +1,228 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Xinyu Wei is a PhD candidate in Economics and Management at ECARES, Université libre de Bruxelles. Research on household risk, labour economics, ageing and social protection.">
-  <meta name="color-scheme" content="light">
-  <title>Xinyu Wei | Economics</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xinyu Wei</title>
+<meta name="description" content="Xinyu Wei, PhD candidate in economics at ECARES, Université libre de Bruxelles. Applied microeconomics, household finance, labour economics, ageing and social protection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a quiet two-column research page; a sticky identity column on the left, a single reading column on the right. Stacks to one column on phones. */
+:root {
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --fg: #18201d;
+  --muted: #56625d;
+  --rule: #d6ddd9;
+  --accent: #2c5d4f;
+  --accent-soft: #e3ece8;
+  --font-display: "Spectral", "Iowan Old Style", Georgia, serif;
+  --font-body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: 2.4rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121715; --surface: #18201d; --fg: #e6ece9; --muted: #9eaaa5;
+    --rule: #2b3531; --accent: #8cc4b0; --accent-soft: #1f2b27; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121715; --surface: #18201d; --fg: #e6ece9; --muted: #9eaaa5;
+  --rule: #2b3531; --accent: #8cc4b0; --accent-soft: #1f2b27; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 56px 72px;
+  display: grid;
+  grid-template-columns: minmax(0, 270px) minmax(0, 1fr);
+  gap: 64px;
+}
+@media (max-width: 820px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 32px 56px; }
+}
+
+/* Identity column */
+.id { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); align-self: start; display: flex; flex-direction: column; gap: 20px; }
+@media (max-width: 820px) { .id { position: static; } }
+.id h1 { font-family: var(--font-display); font-weight: 500; font-size: var(--step-3); line-height: 1.05; margin: 0; letter-spacing: -0.01em; }
+.id .role { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.id .market { display: inline-block; font-family: var(--font-mono); font-size: var(--step--1); color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 3px; }
+.contact { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.contact .label { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.email-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.email-row span { user-select: all; font-size: 0.92rem; word-break: break-all; }
+.copy {
+  font: 500 0.72rem var(--font-mono); color: var(--muted); background: transparent;
+  border: 1px solid var(--rule); border-radius: 3px; padding: 2px 8px; cursor: pointer;
+}
+.copy:hover { color: var(--accent); border-color: var(--accent); }
+.links { display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 0.95rem; }
+.links a { font-weight: 500; }
+
+/* Reading column */
+main { min-width: 0; display: flex; flex-direction: column; gap: 56px; }
+section { display: flex; flex-direction: column; gap: 20px; }
+h2 {
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--muted); margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--rule);
+}
+.about p { margin: 0; max-width: 66ch; }
+.about { gap: 14px; }
+.fields { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.fields span { font-size: 0.85rem; border: 1px solid var(--rule); padding: 3px 10px; border-radius: 3px; color: var(--muted); }
+
+.paper { display: flex; flex-direction: column; gap: 8px; padding-bottom: 28px; border-bottom: 1px solid var(--rule); }
+.paper:last-child { border-bottom: 0; padding-bottom: 0; }
+.paper h3 { font-family: var(--font-display); font-weight: 500; font-size: var(--step-2); line-height: 1.2; margin: 0; text-wrap: balance; max-width: 34ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted); }
+.status { color: var(--accent); }
+.data { display: flex; flex-wrap: wrap; gap: 6px; }
+.data span { font-family: var(--font-mono); font-size: 0.72rem; background: var(--accent-soft); color: var(--fg); padding: 2px 7px; border-radius: 3px; }
+.finding { margin: 4px 0 0; max-width: 66ch; }
+details { max-width: 66ch; }
+summary { cursor: pointer; font-size: 0.9rem; font-weight: 500; color: var(--accent); list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+"; font-family: var(--font-mono); display: inline-block; width: 1ch; }
+details[open] summary::before { content: "−"; }
+details p { margin: 10px 0 0; color: var(--fg); }
+.presented { font-size: 0.88rem; color: var(--muted); margin: 0; }
+
+.rows { display: flex; flex-direction: column; gap: 18px; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 20px; align-items: baseline; }
+.row .what { font-weight: 600; }
+.row .when { font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.row .detail { grid-column: 1 / -1; color: var(--muted); font-size: 0.95rem; max-width: 66ch; }
+@media (max-width: 480px) { .row { grid-template-columns: minmax(0, 1fr); } }
+
+footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <a class="wordmark" href="./">Xinyu Wei</a>
-    <nav aria-label="Main navigation">
+
+<div class="page">
+  <aside class="id">
+    <h1>Xinyu Wei</h1>
+    <p class="role">PhD Candidate in Economics<br>ECARES, Université libre de Bruxelles</p>
+    <span class="market">2026–27 job market</span>
+    <div class="contact">
+      <span class="label">Email</span>
+      <div class="email-row"><span id="email1">xinyu.wei@ulb.be</span><button class="copy" type="button" id="copy1" data-target="email1">Copy</button></div>
+      <div class="email-row"><span id="email2">weixinyu25@gmail.com</span><button class="copy" type="button" id="copy2" data-target="email2">Copy</button></div>
+      <span class="label">Based in</span>
+      <span>Brussels, Belgium</span>
+    </div>
+    <nav class="links" aria-label="Links">
+      <a href="Xinyu_Wei_CV.pdf" target="_blank" rel="noopener">Curriculum vitae (PDF)</a>
       <a href="#research">Research</a>
-      <a href="cv.html">CV</a>
-      <a href="#contact">Contact</a>
     </nav>
-  </header>
-  <main id="main">
-    <section class="intro" aria-labelledby="name">
-      <p class="eyebrow">ECARES · Université libre de Bruxelles</p>
-      <h1 id="name">Xinyu Wei</h1>
-      <p class="role">PhD candidate in Economics and Management</p>
-      <p class="lead">I study how households respond to income, employment and care shocks, and how social protection shapes their outcomes.</p>
-      <p>I am a doctoral researcher at ECARES, Université libre de Bruxelles, supervised by Bram De Rock. I expect to complete my PhD in 2027. My research combines household panel data with applied econometric methods to examine income risk, consumption smoothing, ageing and welfare.</p>
-      <p>Before my PhD, I worked on macroeconomic and financial-market reports at the Shenzhen Finance Institute and on historical data at Harvard’s China Gazetteer Project.</p>
-      <div class="intro-links"><a href="cv.html">View curriculum vitae <span aria-hidden="true">↗</span></a><a href="mailto:xinyu.wei@ulb.be">xinyu.wei@ulb.be</a></div>
+  </aside>
+
+  <main>
+    <section class="about" id="about">
+      <h2>About</h2>
+      <p>I am a PhD candidate in economics at ECARES, Université libre de Bruxelles, supervised by Bram De Rock. I study how households absorb income, health and care shocks, and how well social protection and standard welfare measures capture what they go through. My work uses large household panels from China, Europe, the UK and the US.</p>
+      <p>Before the PhD I worked on macro-finance. My MPhil thesis at the Chinese University of Hong Kong studied monetary policy and the labour share, and at the Shenzhen Finance Institute I wrote public reports on the US economy and taught applied econometrics.</p>
+      <p>I am on the 2026–27 job market and expect to complete my PhD in 2027.</p>
+      <div class="fields" aria-label="Fields">
+        <span>Applied microeconomics</span><span>Household finance</span><span>Labour economics</span><span>Ageing and social protection</span>
+      </div>
     </section>
-    <section id="research" class="section" aria-labelledby="research-title">
-      <div class="section-heading"><h2 id="research-title">Research</h2><span>Household risk and welfare</span></div>
+
+    <section id="research">
+      <h2>Research</h2>
+
       <article class="paper">
-        <p class="paper-status">Working paper · 2026</p>
         <h3>When Care Supply Becomes Care Demand: Functional Decline and Support Reallocation within Older Couples</h3>
-        <p>Using eight waves of SHARE, I examine care reallocation following the onset of functional limitations in a caregiving spouse. The original recipient becomes 9.7 percentage points less likely to receive spousal care, while additional outside support concentrates on the newly impaired caregiver. Household-level service growth can therefore mask incomplete replacement of lost care. The analysis includes comparative evidence from CHARLS in China.</p>
+        <div class="meta"><span class="status">Working paper, 2026</span></div>
+        <div class="data"><span>SHARE</span><span>CHARLS</span></div>
+        <p class="finding">When the spouse who provides care develops functional limitations, the original recipient becomes 9.7 percentage points less likely to receive spousal care, and outside help only partly fills the gap.</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>Spouses provide much of the care that older adults receive, but caregivers age too. This paper follows older couples across eight waves of SHARE around the onset of functional limitations in the caregiving spouse. The original recipient becomes 9.7 percentage points less likely to receive spousal care, while additional outside support concentrates on the newly impaired caregiver, so lost care is only partly replaced. Household-level measures of service use can therefore hide a care gap for the person who was already dependent. A comparison with CHARLS provides evidence from China.</p>
+        </details>
       </article>
+
       <article class="paper">
-        <p class="paper-status">Submitted to China Economic Review</p>
         <h3>Income Risk Exposure and Consumption Smoothing in China</h3>
-        <p>Using six CFPS waves (2012–2022) and a BPP income-process model estimated by two-step GMM, I distinguish income-shock exposure from consumption pass-through. Transitory income-shock variance is approximately 40% higher in the bottom than the top income tercile, while consumption pass-through shows no systematic income gradient.</p>
-        <p class="paper-note">Presented at the Mannheim Applied Seminar, March 2026, and the ECARES Internal Seminar, February 2026.</p>
+        <div class="meta"><span class="status">Submitted to <i>China Economic Review</i></span></div>
+        <div class="data"><span>CFPS 2012–2022</span></div>
+        <p class="finding">Low-income households are more vulnerable mainly because they face larger income shocks, not because they smooth consumption less well.</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>Using six waves of the China Family Panel Studies (2012–2022) and a BPP income-process model estimated by two-step GMM with bootstrap inference, I separate exposure to income shocks from their pass-through to consumption. Transitory income-shock variance is about 40% higher in the bottom than in the top income tercile, while consumption pass-through shows no systematic income gradient. The vulnerability of low-income households comes mainly from greater shock exposure rather than weaker smoothing.</p>
+        </details>
+        <p class="presented">Presented at the Mannheim Applied Seminar (March 2026) and the ECARES Internal Seminar (February 2026).</p>
       </article>
+
       <article class="paper">
-        <p class="paper-status">Work in progress</p>
         <h3>Time Poverty as a Constraint</h3>
-        <p>Using person fixed-effects event studies and double/debiased machine learning with LISS, UKHLS and PSID household panels, I examine whether time-poverty measures capture binding constraints or time-use choices. Current estimates associate working more hours than desired with welfare losses equivalent to approximately 12–23% of income; standard measures miss 67–85% of those affected.</p>
+        <div class="meta"><span class="status">Work in progress</span></div>
+        <div class="data"><span>LISS</span><span>UKHLS</span><span>PSID</span></div>
+        <p class="finding">Long hours are mostly chosen and carry little welfare cost. The cost comes from working more hours than one wants, worth about 12–23% of income, and standard measures miss most of the people affected.</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>Time-adjusted poverty measures are increasingly used to argue for childcare, leave and working-time policies, but they are rarely validated against welfare. Using household panels from the Netherlands (LISS), the UK (Understanding Society) and the US (PSID), I show that hours-based time poverty mostly reflects chosen allocations of time. The hidden time poor are no less satisfied than others, and time-poor households do not suffer larger well-being losses after births, the onset of caregiving, partner health shocks or the COVID-19 school closures. The welfare-relevant object is a binding hours constraint: working more hours than one wants. It costs about 12–23% of income in equivalent terms, in line with estimates from administrative data, yet standard time-poverty and income measures miss 67–85% of those affected, who are concentrated in the upper half of the income distribution. Legal rights to request flexible or reduced hours do not relax the constraint; changing employer does. Identification relies on person fixed-effects event studies, with double/debiased machine learning as a robustness check.</p>
+        </details>
       </article>
+
       <article class="paper">
-        <p class="paper-status">Work in progress · Joint work under the HAIOPOLICY project</p>
         <h3>Temporary Unemployment and Household Outcomes in Belgium</h3>
-        <p>We use an event-study design with EU-SILC/BE-SILC panels and a weighted comparison group to examine workers exposed to Belgium’s temporary-unemployment response in 2020. These workers had 0.48 fewer months of employment in 2020, with no statistically detectable household-income or poverty gap through 2022.</p>
+        <div class="meta"><span class="status">Work in progress</span><span>Joint work, HAIOPOLICY project</span></div>
+        <div class="data"><span>EU-SILC</span><span>BE-SILC</span></div>
+        <p class="finding">Workers placed on temporary unemployment in 2020 lost employment months, but their households showed no detectable income or poverty gap through 2022.</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>During the COVID-19 crisis Belgium protected jobs through its temporary-unemployment scheme. Using EU-SILC/BE-SILC panels in an event-study design with a weighted comparison group, we find that exposed workers had 0.48 fewer employment months in 2020 but no detectable household-income or poverty gap through 2022. Labour-market recovery and household protection followed different paths.</p>
+        </details>
       </article>
     </section>
-    <section id="contact" class="section contact" aria-labelledby="contact-title">
-      <div><p class="eyebrow">Get in touch</p><h2 id="contact-title">Contact</h2></div>
-      <div><a class="contact-email" href="mailto:xinyu.wei@ulb.be">xinyu.wei@ulb.be</a><p>ECARES · Université libre de Bruxelles<br>Brussels, Belgium</p></div>
-    </section>
+
+    <footer>Last updated October 2026</footer>
   </main>
-  <footer><span>© 2026 Xinyu Wei</span><span>Updated October 2026</span></footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.getAttribute('data-target'));
+    var text = el.textContent;
+    function selectIt() {
+      var range = document.createRange(); range.selectNodeContents(el);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      btn.textContent = 'Selected';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; }, selectIt);
+    } catch (e) { selectIt(); }
+    setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
+  });
+});
+</script>
+
 </body>
 </html>
