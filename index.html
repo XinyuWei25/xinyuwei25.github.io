@@ -74,7 +74,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .contact { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; border-top: 1px solid var(--rule); }
 .contact .label { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 .email-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.email-row span { user-select: all; font-size: 0.92rem; word-break: break-all; }
+.email-row a { font-size: 0.92rem; word-break: break-all; }
 .copy {
   font: 500 0.72rem var(--font-mono); color: var(--muted); background: transparent;
   border: 1px solid var(--rule); border-radius: 3px; padding: 2px 8px; cursor: pointer;
@@ -131,8 +131,8 @@ footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
     <span class="market">2026–27 job market</span>
     <div class="contact">
       <span class="label">Email</span>
-      <div class="email-row"><span id="email1">xinyu.wei@ulb.be</span><button class="copy" type="button" id="copy1" data-target="email1">Copy</button></div>
-      <div class="email-row"><span id="email2">weixinyu25@gmail.com</span><button class="copy" type="button" id="copy2" data-target="email2">Copy</button></div>
+      <div class="email-row"><a id="email1" href="mailto:xinyu.wei@ulb.be">xinyu.wei@ulb.be</a><button class="copy" type="button" id="copy1" data-target="email1">Copy</button></div>
+      <div class="email-row"><a id="email2" href="mailto:weixinyu25@gmail.com">weixinyu25@gmail.com</a><button class="copy" type="button" id="copy2" data-target="email2">Copy</button></div>
       <span class="label">Based in</span>
       <span>Brussels, Belgium</span>
     </div>
@@ -145,11 +145,11 @@ footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
   <main>
     <section class="about" id="about">
       <h2>About</h2>
-      <p>I am a PhD candidate in economics at ECARES, Université libre de Bruxelles, supervised by Bram De Rock. I study how households absorb income, health and care shocks, and how well social protection and standard welfare measures capture what they go through. My work uses large household panels from China, Europe, the UK and the US.</p>
-      <p>Before the PhD I worked on macro-finance. My MPhil thesis at the Chinese University of Hong Kong studied monetary policy and the labour share, and at the Shenzhen Finance Institute I wrote public reports on the US economy and taught applied econometrics.</p>
-      <p>I am on the 2026–27 job market and expect to complete my PhD in 2027.</p>
+      <p>I am a PhD candidate in economics at <a href="https://ecares.ulb.be/" target="_blank" rel="noopener">ECARES</a>, Université libre de Bruxelles, supervised by <a href="https://sites.google.com/site/bramderock/home" target="_blank" rel="noopener">Bram De Rock</a>. I expect to complete my PhD in 2027 and am on the 2026–27 job market.</p>
+      <p>My research focuses on household risk, labour economics, ageing and social protection. Using household panel data, I study how families respond to income, employment and care shocks, and how these responses affect their welfare.</p>
+      <p>Before joining ECARES, I studied at the Chinese University of Hong Kong and Georgetown University and worked at the <a href="https://sfi.cuhk.edu.cn/en" target="_blank" rel="noopener">Shenzhen Finance Institute</a>, where I wrote reports on US macroeconomic developments and taught applied econometrics.</p>
       <div class="fields" aria-label="Fields">
-        <span>Applied microeconomics</span><span>Household finance</span><span>Labour economics</span><span>Ageing and social protection</span>
+        <span>Applied microeconomics</span><span>Household risk</span><span>Labour economics</span><span>Ageing and social protection</span>
       </div>
     </section>
 
@@ -169,7 +169,7 @@ footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
 
       <article class="paper">
         <h3>Income Risk Exposure and Consumption Smoothing in China</h3>
-        <div class="meta"><span class="status">Submitted to <i>China Economic Review</i></span></div>
+        <div class="meta"><span class="status">Working paper, 2026</span></div>
         <div class="data"><span>CFPS 2012–2022</span></div>
         <p class="finding">Low-income households are more vulnerable mainly because they face larger income shocks, not because they smooth consumption less well.</p>
         <details>
@@ -184,21 +184,13 @@ footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
         <div class="meta"><span class="status">Work in progress</span></div>
         <div class="data"><span>LISS</span><span>UKHLS</span><span>PSID</span></div>
         <p class="finding">Long hours are mostly chosen and carry little welfare cost. The cost comes from working more hours than one wants, worth about 12–23% of income, and standard measures miss most of the people affected.</p>
-        <details>
-          <summary>Abstract</summary>
-          <p>Time-adjusted poverty measures are increasingly used to argue for childcare, leave and working-time policies, but they are rarely validated against welfare. Using household panels from the Netherlands (LISS), the UK (Understanding Society) and the US (PSID), I show that hours-based time poverty mostly reflects chosen allocations of time. The hidden time poor are no less satisfied than others, and time-poor households do not suffer larger well-being losses after births, the onset of caregiving, partner health shocks or the COVID-19 school closures. The welfare-relevant object is a binding hours constraint: working more hours than one wants. It costs about 12–23% of income in equivalent terms, in line with estimates from administrative data, yet standard time-poverty and income measures miss 67–85% of those affected, who are concentrated in the upper half of the income distribution. Legal rights to request flexible or reduced hours do not relax the constraint; changing employer does. Identification relies on person fixed-effects event studies, with double/debiased machine learning as a robustness check.</p>
-        </details>
       </article>
 
       <article class="paper">
         <h3>Temporary Unemployment and Household Outcomes in Belgium</h3>
         <div class="meta"><span class="status">Work in progress</span><span>Joint work, HAIOPOLICY project</span></div>
-        <div class="data"><span>EU-SILC</span><span>BE-SILC</span></div>
+        <div class="data"><span>EU-SILC</span></div>
         <p class="finding">Workers placed on temporary unemployment in 2020 lost employment months, but their households showed no detectable income or poverty gap through 2022.</p>
-        <details>
-          <summary>Abstract</summary>
-          <p>During the COVID-19 crisis Belgium protected jobs through its temporary-unemployment scheme. Using EU-SILC/BE-SILC panels in an event-study design with a weighted comparison group, we find that exposed workers had 0.48 fewer employment months in 2020 but no detectable household-income or poverty gap through 2022. Labour-market recovery and household protection followed different paths.</p>
-        </details>
       </article>
     </section>
 
