@@ -68,8 +68,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 /* Identity column */
 .id { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); align-self: start; display: flex; flex-direction: column; gap: 20px; }
 @media (max-width: 820px) { .id { position: static; } }
-.photo { width: 160px; height: 160px; max-width: 100%; object-fit: cover; border-radius: 6px; display: block; }
-@media (max-width: 820px) { .photo { width: 120px; height: 120px; } }
+.photo { width: 168px; height: 210px; max-width: 100%; object-fit: cover; object-position: center top; border-radius: 6px; display: block; }
+@media (max-width: 820px) { .photo { width: 120px; height: 150px; } }
 .id h1 { font-family: var(--font-display); font-weight: 500; font-size: var(--step-3); line-height: 1.05; margin: 0; letter-spacing: -0.01em; }
 .id .role { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
 .id .market { display: inline-block; font-family: var(--font-mono); font-size: var(--step--1); color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 3px; }
@@ -128,13 +128,12 @@ footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
 
 <div class="page">
   <aside class="id">
-    <img class="photo" src="photo.jpg" alt="Portrait of Xinyu Wei" width="160" height="160">
+    <img class="photo" src="photo.jpg" alt="Portrait of Xinyu Wei" width="168" height="210">
     <h1>Xinyu Wei</h1>
     <p class="role">PhD Candidate in Economics<br>ECARES, Université libre de Bruxelles</p>
     <span class="market">2026–27 job market</span>
     <div class="contact">
       <span class="label">Email</span>
-      <div class="email-row"><a id="email1" href="mailto:xinyu.wei@ulb.be">xinyu.wei@ulb.be</a><button class="copy" type="button" id="copy1" data-target="email1">Copy</button></div>
       <div class="email-row"><a id="email2" href="mailto:weixinyu25@gmail.com">weixinyu25@gmail.com</a><button class="copy" type="button" id="copy2" data-target="email2">Copy</button></div>
       <span class="label">Based in</span>
       <span>Brussels, Belgium</span>
@@ -171,6 +170,17 @@ footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
       </article>
 
       <article class="paper">
+        <h3>Hours You Cannot Choose: The Welfare Cost of Hours Constraints</h3>
+        <div class="meta"><span class="status">Working paper, 2026</span></div>
+        <div class="data"><span>LISS</span><span>Understanding Society</span></div>
+        <p class="finding">Many workers cannot choose their hours, yet standard welfare measures value their time at the wage. Using Dutch and British household panels, the paper shows that hours constraints are common, concentrated among higher earners and as costly for well-being as income poverty, and bounds the welfare loss at 6–32% of income for the median overemployed single.</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>Welfare analysis usually assumes that the hours people work are the hours they chose. Revealed-preference methods, full-income measures and collective-household models all treat the budget set as the only restriction and value time at the wage. Yet hours come with jobs. Using household panels from the Netherlands (LISS) and the United Kingdom (Understanding Society), this paper shows that working more hours than desired is common, concentrated in the upper half of the income distribution, and costly: within person it lowers life satisfaction by half as much as falling into income poverty in the Netherlands and by twice as much in the United Kingdom. The constraint is real rather than a complaint. Hours barely move within a job but adjust sharply when workers change employer. A revealed-preference test on consumption and time-use data, with a built-in placebo, shows that the choices of the overemployed are rationalised by a shadow price of time above their wage and those of the underemployed below it. The paper brings quantity rationing into nonparametric revealed preference. This yields bounds on the virtual wage and on the money-metric loss without functional-form assumptions. For the median overemployed single, the loss is between 6% and 32% of income, a bracket that contains the well-being estimate. Valuing time at the wage overstates the welfare of constrained workers by exactly this loss. Ongoing work extends the analysis to couples, showing that stability-based identification of the intrahousehold sharing rule is invariant to rationed hours when time is private, and that households do not compensate the rationed spouse.</p>
+        </details>
+      </article>
+
+      <article class="paper">
         <h3>Income Risk Exposure and Consumption Smoothing in China</h3>
         <div class="meta"><span class="status">Working paper, 2026</span></div>
         <div class="data"><span>CFPS 2012–2022</span></div>
@@ -182,12 +192,6 @@ footer { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
         <p class="presented">Presented at the Mannheim Applied Seminar (March 2026) and the ECARES Internal Seminar (February 2026).</p>
       </article>
 
-      <article class="paper">
-        <h3>Time Poverty as a Constraint</h3>
-        <div class="meta"><span class="status">Work in progress</span></div>
-        <div class="data"><span>LISS</span><span>UKHLS</span><span>PSID</span></div>
-        <p class="finding">Working long hours and working more hours than one wants capture different forms of time pressure. Across household panels from the Netherlands, the UK and the US, the welfare cost lies in unwanted working hours, with a life-satisfaction penalty equivalent to 13–21% of household income. Conventional time-poverty measures miss most of these workers.</p>
-      </article>
 
       <article class="paper">
         <h3>Temporary Unemployment and Household Outcomes in Belgium</h3>
